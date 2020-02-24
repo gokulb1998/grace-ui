@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 
+import 'package:grace_ui/Screens/CategoriesView/categoriesview.dart';
+import 'package:grace_ui/Screens/MyAccount/myaccount.dart';
+import 'package:grace_ui/Screens/MyCart/mycart.dart';
+import 'package:grace_ui/Screens/MyWishlist/mywishlist.dart';
+import 'package:grace_ui/Screens/ShopView/shopview.dart';
+
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -17,11 +23,16 @@ class HomePageScreen extends StatefulWidget {
 class _HomePageScreenState extends State<HomePageScreen> {
   int currentTabIndex = 0;
   List<Widget> tabs = [
+    ShopView(),
+    CategoriesView(),
+    MyCart(),
+    MyWishlist(),
+    MyAccount()
   ];
   onTapped(int index) {
     setState(() {
       currentTabIndex = index;
-      print(index);
+      // print(index);
     });
   }
 
@@ -58,30 +69,37 @@ class _HomePageScreenState extends State<HomePageScreen> {
         height: MediaQuery.of(context).size.height,
         child: Scaffold(
           body: tabs[currentTabIndex],
-          // bottomNavigationBar: BottomNavigationBar(
-          //   onTap: onTapped,
-          //   currentIndex: currentTabIndex,
-          //   selectedItemColor: Colors.purple,
-          //   unselectedItemColor: Colors.black,
-          //   items: [
-          //     BottomNavigationBarItem(
-          //       icon: Icon(Icons.map),
-          //       title: Text("Map"),
-          //     ),
-          //     BottomNavigationBarItem(
-          //       icon: Icon(Icons.list),
-          //       title: Text("List"),
-          //     ),
-          //     BottomNavigationBarItem(
-          //       icon: Icon(Icons.favorite_border),
-          //       title: Text("MyDoctors"),
-          //     ),
-          //     BottomNavigationBarItem(
-          //       icon: Icon(Icons.person),
-          //       title: Text("Profile"),
-          //     )
-          //   ],
+          // body: Center(
+          //   child: Text('Page will be updated'),
           // ),
+          bottomNavigationBar: BottomNavigationBar(
+            onTap: onTapped,
+            currentIndex: currentTabIndex,
+            selectedItemColor: Colors.green,
+            unselectedItemColor: Colors.black,
+            items: [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                title: Text("Home"),
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.list),
+                title: Text("Categories"),
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.shopping_cart),
+                title: Text("My Cart"),
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.favorite_border),
+                title: Text("My Wishlist"),
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.person),
+                title: Text("My Account"),
+              ),
+            ],
+          ),
         ),
       ),
     );

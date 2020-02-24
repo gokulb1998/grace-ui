@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 // import 'dart:async';
 
@@ -58,17 +60,14 @@ class _LoginFormState extends State<LoginForm> {
                 flex: 10,
                 child: RaisedButton(
                   onPressed: () {
-                    // if (_loginFormKey.currentState.validate()) {
-                    //   Timer(Duration(seconds: 5), () {
-                    //     // do the action here
-                    //     Navigator.pushReplacementNamed(context, "/map");
-                    //   });
-                    //   Scaffold.of(context).showSnackBar(
-                    //       SnackBar(
-                    //           content: Text('Welcome to HomePage')
-                    //       )
-                    //   );
-                    // }
+                    if (_loginFormKey.currentState.validate()) {
+                      Timer(Duration(seconds: 5), () {
+                        // do the action here
+                        Navigator.pushReplacementNamed(context, "/home");
+                        Scaffold.of(context).showSnackBar(
+                            SnackBar(content: Text('Welcome to HomePage')));
+                      });
+                    }
                   },
                   child: Text("Log In",
                       textDirection: TextDirection.ltr,
