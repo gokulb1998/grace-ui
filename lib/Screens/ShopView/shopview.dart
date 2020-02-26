@@ -60,7 +60,7 @@ class _ShopViewScreenState extends State<ShopViewScreen> {
           ],
           iconTheme: IconThemeData(color: Colors.white),
           bottom: PreferredSize(
-            preferredSize: const Size.fromHeight(45.0),
+            preferredSize: const Size.fromHeight(52.0),
             child: Padding(
               padding: EdgeInsets.all(5),
               child: Container(
