@@ -1,4 +1,4 @@
-import 'dart:async';
+// import 'dart:async';
 
 import 'package:flutter/material.dart';
 // import 'dart:async';
@@ -21,19 +21,20 @@ class _LoginFormState extends State<LoginForm> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           TextFormField(
-              decoration: const InputDecoration(
-                  prefixIcon: Icon(Icons.person),
-                  hintText: 'Email / Mobile',
-                  fillColor: Colors.green,
-                  border: OutlineInputBorder(),
-                  labelText: 'Email / Mobile *'),
-              keyboardType: TextInputType.emailAddress,
-              validator: (value) {
-                if (value.isEmpty) {
-                  return 'Text cannot be empty.';
-                }
-                return null;
-              }),
+            decoration: const InputDecoration(
+                prefixIcon: Icon(Icons.person),
+                hintText: 'Email / Mobile',
+                fillColor: Colors.green,
+                border: OutlineInputBorder(),
+                labelText: 'Email / Mobile *'),
+            keyboardType: TextInputType.emailAddress,
+            validator: (value) {
+              if (value.isEmpty) {
+                return 'Text cannot be empty.';
+              }
+              return null;
+            },
+          ),
           new Padding(padding: new EdgeInsets.all(10)),
           TextFormField(
             obscureText: true,
@@ -47,9 +48,9 @@ class _LoginFormState extends State<LoginForm> {
               if (value.isEmpty) {
                 return 'Password cannot be empty';
               }
-              if (value.length < 8) {
-                return 'Password should be 8 characters long in minimum';
-              }
+              // if (value.length < 8) {
+              //   return 'Password should be 8 characters long in minimum';
+              // }
               return null;
             },
           ),
@@ -60,14 +61,15 @@ class _LoginFormState extends State<LoginForm> {
                 flex: 10,
                 child: RaisedButton(
                   onPressed: () {
-                    if (_loginFormKey.currentState.validate()) {
-                      Timer(Duration(seconds: 5), () {
-                        // do the action here
-                        Navigator.pushReplacementNamed(context, "/home");
-                        Scaffold.of(context).showSnackBar(
-                            SnackBar(content: Text('Welcome to HomePage')));
-                      });
-                    }
+                    // if (_loginFormKey.currentState.validate()) {
+                    //   Timer(Duration(seconds: 3), () {
+                    //     // do the action here
+                    //     Navigator.pushReplacementNamed(context, "/home");
+                    //   });
+                    // }
+                    Scaffold.of(context).showSnackBar(
+                        SnackBar(content: Text('Welcome to HomePage')));
+                    Navigator.pushReplacementNamed(context, "/home");
                   },
                   child: Text("Log In",
                       textDirection: TextDirection.ltr,
