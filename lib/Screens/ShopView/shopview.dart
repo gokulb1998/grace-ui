@@ -1,12 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:grace_ui/Screens/ShopView/allbrands.dart';
-import 'package:grace_ui/Screens/ShopView/allcategories.dart';
-import 'package:grace_ui/Screens/ShopView/bsp.dart';
-import 'package:grace_ui/Screens/ShopView/newproducts.dart';
-import 'package:grace_ui/Screens/ShopView/todaydeals.dart';
-import 'package:grace_ui/Screens/ShopView/topoffers.dart';
+import 'package:grace_ui/Screens/ShopView/index.dart';
 import 'package:grace_ui/Widgets/Sidemenu.dart';
 
 class ShopView extends StatelessWidget {
@@ -28,7 +23,6 @@ List<T> map<T>(List list, Function handler) {
   for (var i = 0; i < list.length; i++) {
     result.add(handler(i, list[i]));
   }
-
   return result;
 }
 
@@ -65,6 +59,27 @@ class _ShopViewScreenState extends State<ShopViewScreen> {
             // IconButton(icon: Icon(Icons.shopping_cart,color: Colors.white,), onPressed: null),
           ],
           iconTheme: IconThemeData(color: Colors.white),
+          bottom: PreferredSize(
+            preferredSize: const Size.fromHeight(45.0),
+            child: Padding(
+              padding: EdgeInsets.all(5),
+              child: Container(
+                padding: EdgeInsets.all(2),
+                decoration: BoxDecoration(color: Colors.white),
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Search for Products,Brands and More',
+                    hintStyle:
+                        GoogleFonts.poppins(fontSize: 15, color: Colors.black),
+                    suffixIcon: Icon(Icons.search),
+                    border: InputBorder.none,
+                    contentPadding: EdgeInsets.only(top: 10, left: 5),
+                  ),
+                  style: GoogleFonts.poppins(color: Colors.black, fontSize: 16.0),
+                ),
+              ),
+            ),
+          ),
         ),
         drawer: SideMenu(),
         body: Container(

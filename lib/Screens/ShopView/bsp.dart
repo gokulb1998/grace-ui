@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:grace_ui/Models/products.dart';
 
-List productList = [
+List bspproductList = [
   Products(
       imgUrl:
           'assets/images/products/3-roses-natural-care-tea-1001561352209.jpg',
@@ -40,7 +40,7 @@ class Bsp extends StatelessWidget {
       shrinkWrap: true,
       physics: BouncingScrollPhysics(),
       scrollDirection: Axis.horizontal,
-      itemCount: productList.length,
+      itemCount: bspproductList.length,
       itemBuilder: (context, int i) => Row(
         children: <Widget>[
           Column(
@@ -56,7 +56,7 @@ class Bsp extends StatelessWidget {
                     children: <Widget>[
                     Center(
                       child: Image.asset(
-                        productList[i].imgUrl,
+                        bspproductList[i].imgUrl,
                         width: 105,
                         height: 95,
                       ),
@@ -68,11 +68,11 @@ class Bsp extends StatelessWidget {
                 height: 5,
               ),
               Text(
-                productList[i].title,
+                bspproductList[i].title,
                 style: GoogleFonts.poppins(fontSize: 12),
               ),
               Text(
-                'Rs.' + productList[i].price.toString(),
+                'Rs.' + bspproductList[i].price.toString(),
                 style: GoogleFonts.poppins(fontSize: 12),
               ),
             ],
