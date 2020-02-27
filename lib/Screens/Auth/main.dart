@@ -25,7 +25,7 @@ class Main extends StatelessWidget {
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   fillColor: Colors.green,
-                  labelText: 'Enter PinCode',
+                  labelText: 'Enter PinCode*',
                   // labelStyle: TextStyle(color: Colors.white)
                 ),
                 keyboardType: TextInputType.number,
