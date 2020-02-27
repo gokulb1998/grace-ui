@@ -7,7 +7,7 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="grace_ui"
+        android:label="grace"
         android:icon="@mipmap/gracelogo">
         <activity
             android:name=".MainActivity"
